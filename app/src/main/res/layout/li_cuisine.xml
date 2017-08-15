@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/small_padding"
+    android:background="@drawable/bg_round_white"
+    android:orientation="vertical"
+    android:padding="@dimen/small_padding">
+
+    <ImageView
+        android:id="@+id/image_cuisine"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cuisine_height"
+        android:src="@drawable/fr" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/primary_text"
+        android:padding="@dimen/small_padding"
+        android:text="@string/france"
+        android:textSize="@dimen/text_medium"
+        android:textStyle="bold" />
+</LinearLayout>

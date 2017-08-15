@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MustKnow Recipes</string>
+
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="home">Home</string>
+
+    <string name="france">Франция</string>
+    <string name="italy">Италия</string>
+    <string name="spain">Испания</string>
+    <string name="germany">Германия</string>
+    <string name="ukraine">Украина</string>
+
+    <string name="cuisines">Кухни</string>
+    <string name="mins">мин</string>
+    <string name="ingredients">Ингредиенты</string>
+    <string name="steps">Шаги приготовления</string>
+
+    <string name="favourite">Любимые рецепты</string>
+    <string name="search">Поиск рецепта</string>
+    <string name="search_hint">Название ..</string>
+
+    <string name="no_recipes">К сожалению, тут пока нет рецептов ...</string>
+</resources>
