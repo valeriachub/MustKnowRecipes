@@ -22,10 +22,12 @@ import app.valeriachub.mustknowrecipes.R;
 import app.valeriachub.mustknowrecipes.adapter.FavouritesAdapter;
 import app.valeriachub.mustknowrecipes.callback.RecipeCallback;
 import app.valeriachub.mustknowrecipes.data.model.Recipe;
+import app.valeriachub.mustknowrecipes.data.model.RecipeFull;
 import app.valeriachub.mustknowrecipes.presenter.SearchPresenter;
 import app.valeriachub.mustknowrecipes.presenter.SearchPresenterImpl;
 import app.valeriachub.mustknowrecipes.utils.KeyboardUtils;
 import app.valeriachub.mustknowrecipes.view.activity.MainActivity;
+import app.valeriachub.mustknowrecipes.view.activity.RecipeDetailsActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -48,9 +50,10 @@ public class SearchFragment extends Fragment implements SearchView, RecipeCallba
     private Unbinder unbinder;
     private MainActivity mainActivity;
     private SearchPresenter searchPresenter;
+    private FavouritesAdapter adapter;
+
     private List<Recipe> recipeList = new ArrayList<>();
     private List<Recipe> searchList = new ArrayList<>();
-    private FavouritesAdapter adapter;
 
     public static SearchFragment getInstance() {
         return new SearchFragment();
@@ -91,8 +94,8 @@ public class SearchFragment extends Fragment implements SearchView, RecipeCallba
     }
 
     @OnClick(R.id.image_toolbar_nav)
-    void onMoreClicked() {
-        searchPresenter.onItemClicked(R.id.image_toolbar_nav);
+    void onMoreClicked(View view) {
+        searchPresenter.onItemClicked(view.getId());
     }
 
     @OnTextChanged(value = R.id.edit_search, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
@@ -128,17 +131,22 @@ public class SearchFragment extends Fragment implements SearchView, RecipeCallba
         adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void showRecipeDetails(RecipeFull recipe) {
+        RecipeDetailsActivity.start(getActivity(), recipe);
+    }
+
     /**
      * Override Callback
      */
 
     @Override
     public void onRecipeClicked(Recipe recipe) {
-
+        searchPresenter.onRecipeClicked(recipe);
     }
 
     @Override
     public void onRecipeLikeClicked(Recipe recipe, int position) {
-
+        searchPresenter.onLikeRecipeClicked(recipe);
     }
 }

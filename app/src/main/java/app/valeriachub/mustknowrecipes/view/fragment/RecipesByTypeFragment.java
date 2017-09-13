@@ -114,7 +114,6 @@ public class RecipesByTypeFragment extends Fragment implements RecipesByTypeView
 
     @Override
     public void notifyRecipeChanged(int position) {
-        //TODO Jump Jump
-        adapter.notifyItemChanged(position);
+//        adapter.notifyItemChanged(position);
     }
 }

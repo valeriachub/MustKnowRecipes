@@ -14,6 +14,7 @@ import app.valeriachub.mustknowrecipes.presenter.MainPresenter;
 import app.valeriachub.mustknowrecipes.presenter.MainPresenterImpl;
 import app.valeriachub.mustknowrecipes.utils.FragmentUtils;
 import app.valeriachub.mustknowrecipes.utils.KeyboardUtils;
+import app.valeriachub.mustknowrecipes.view.fragment.AboutFragment;
 import app.valeriachub.mustknowrecipes.view.fragment.CuisinesFragment;
 import app.valeriachub.mustknowrecipes.view.fragment.FavouritesFragment;
 import app.valeriachub.mustknowrecipes.view.fragment.SearchFragment;
@@ -58,9 +59,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
             public void onDrawerStateChanged(int newState) {
-               if(newState == DrawerLayout.STATE_DRAGGING){
-                   KeyboardUtils.hideKeyboard(MainActivity.this, navigationView);
-               }
+                if (newState == DrawerLayout.STATE_DRAGGING) {
+                    KeyboardUtils.hideKeyboard(MainActivity.this, navigationView);
+                }
             }
         });
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -81,6 +82,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
                     case R.id.menu_search: {
                         FragmentUtils.replace(getSupportFragmentManager(), R.id.layout_container, SearchFragment.getInstance(), "", false);
                         navigationView.setCheckedItem(R.id.menu_search);
+                        break;
+                    }
+
+                    case R.id.menu_about: {
+                        FragmentUtils.replace(getSupportFragmentManager(), R.id.layout_container, AboutFragment.getInstance(), "", false);
+                        navigationView.setCheckedItem(R.id.menu_about);
                         break;
                     }
                 }

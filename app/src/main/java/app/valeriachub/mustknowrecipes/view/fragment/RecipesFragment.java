@@ -130,7 +130,7 @@ public class RecipesFragment extends Fragment implements RecipesView {
     }
 
     @OnClick(R.id.image_toolbar_nav)
-    void onBackClick() {
-        recipesPresenter.onItemClicked(R.id.image_toolbar_nav);
+    void onBackClick(View view) {
+        recipesPresenter.onItemClicked(view.getId());
     }
 }

@@ -46,9 +46,9 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
         holder.titleView.setText(recipe.getTitle());
         holder.timeView.setText(recipe.getTimeCooking() + " " + context.getString(R.string.mins));
         if (recipe.getIdFavourite() > 0) {
-            PictureUtils.setIcon(context, holder.likeView, R.drawable.ic_favorite);
+            holder.likeView.setImageResource(R.drawable.ic_favorite);
         } else {
-            PictureUtils.setIcon(context, holder.likeView, R.drawable.ic_no_favorite);
+            holder.likeView.setImageResource(R.drawable.ic_no_favorite);
         }
     }
 
@@ -79,6 +79,8 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
         @OnClick(R.id.image_like)
         void onLikeClicked() {
             if (callback != null) {
+                boolean wasFavourite = recipeList.get(getAdapterPosition()).getIdFavourite() > 0;
+                likeView.setImageResource(wasFavourite ? R.drawable.ic_no_favorite : R.drawable.ic_favorite);
                 callback.onRecipeLikeClicked(recipeList.get(getAdapterPosition()), getAdapterPosition());
             }
         }

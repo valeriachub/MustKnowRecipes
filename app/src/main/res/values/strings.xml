@@ -22,6 +22,7 @@
 
     <string name="favourite">Любимые рецепты</string>
     <string name="search">Поиск рецепта</string>
+    <string name="about">О приложении</string>
     <string name="search_hint">Название ..</string>
 
     <string name="no_recipes">К сожалению, тут пока нет рецептов ...</string>

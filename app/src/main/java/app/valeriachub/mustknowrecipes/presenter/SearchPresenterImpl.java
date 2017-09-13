@@ -8,6 +8,7 @@ import java.util.List;
 import app.valeriachub.mustknowrecipes.R;
 import app.valeriachub.mustknowrecipes.data.DataManager;
 import app.valeriachub.mustknowrecipes.data.model.Recipe;
+import app.valeriachub.mustknowrecipes.data.model.RecipeFull;
 import app.valeriachub.mustknowrecipes.view.fragment.SearchView;
 
 public class SearchPresenterImpl implements SearchPresenter {
@@ -41,11 +42,29 @@ public class SearchPresenterImpl implements SearchPresenter {
     @Override
     public void onSearchChanged(List<Recipe> recipes, String title) {
         List<Recipe> searchList = new ArrayList<>();
-        for(Recipe recipe: recipes){
-            if(recipe.getTitle().toLowerCase().contains(title.toLowerCase())){
+        for (Recipe recipe : recipes) {
+            if (recipe.getTitle().toLowerCase().contains(title.toLowerCase())) {
                 searchList.add(recipe);
             }
         }
         searchView.setSearchRecipes(searchList);
+    }
+
+    @Override
+    public void onLikeRecipeClicked(Recipe recipe) {
+        DataManager dataManager = DataManager.getInstance(context);
+        if (recipe.getIdFavourite() > 0) {
+            dataManager.removeFromFavourites(recipe.getId());
+            recipe.setIdFavourite(0);
+        } else {
+            dataManager.addToFavourites(recipe.getId());
+        }
+    }
+
+    @Override
+    public void onRecipeClicked(Recipe recipe) {
+        DataManager dataManager = DataManager.getInstance(context);
+        RecipeFull recipeFull = dataManager.getRecipeFull(recipe);
+        searchView.showRecipeDetails(recipeFull);
     }
 }

@@ -11,4 +11,8 @@ public interface SearchPresenter {
     void getRecipes();
 
     void onSearchChanged(List<Recipe> recipes, String title);
+
+    void onLikeRecipeClicked(Recipe recipe);
+
+    void onRecipeClicked(Recipe recipe);
 }

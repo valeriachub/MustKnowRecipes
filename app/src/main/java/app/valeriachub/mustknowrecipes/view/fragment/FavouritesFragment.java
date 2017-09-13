@@ -24,7 +24,6 @@ import app.valeriachub.mustknowrecipes.data.model.Recipe;
 import app.valeriachub.mustknowrecipes.data.model.RecipeFull;
 import app.valeriachub.mustknowrecipes.presenter.FavouritesPresenter;
 import app.valeriachub.mustknowrecipes.presenter.FavouritesPresenterImpl;
-import app.valeriachub.mustknowrecipes.utils.KeyboardUtils;
 import app.valeriachub.mustknowrecipes.view.activity.MainActivity;
 import app.valeriachub.mustknowrecipes.view.activity.RecipeDetailsActivity;
 import butterknife.BindView;
@@ -90,8 +89,8 @@ public class FavouritesFragment extends Fragment implements FavouritesView, Reci
     }
 
     @OnClick(R.id.image_toolbar_nav)
-    void onMoreClicked() {
-        favouritesPresenter.onItemClicked(R.id.image_toolbar_nav);
+    void onMoreClicked(View view) {
+        favouritesPresenter.onItemClicked(view.getId());
     }
 
     /**

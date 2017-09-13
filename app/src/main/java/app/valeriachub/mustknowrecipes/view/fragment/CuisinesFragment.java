@@ -97,8 +97,8 @@ public class CuisinesFragment extends Fragment implements CuisinesView, CountryC
     }
 
     @OnClick(R.id.image_toolbar_nav)
-    void onMoreClicked() {
-        cuisinesPresenter.onItemClicked(R.id.image_toolbar_nav);
+    void onMoreClicked(View view) {
+        cuisinesPresenter.onItemClicked(view.getId());
     }
 
     /**
