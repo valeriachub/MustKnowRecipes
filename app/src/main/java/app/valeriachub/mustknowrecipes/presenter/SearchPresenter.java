@@ -12,7 +12,7 @@ public interface SearchPresenter {
 
     void onSearchChanged(List<Recipe> recipes, String title);
 
-    void onLikeRecipeClicked(Recipe recipe);
+    void onLikeRecipeClicked(Recipe recipe, int position);
 
     void onRecipeClicked(Recipe recipe);
 }

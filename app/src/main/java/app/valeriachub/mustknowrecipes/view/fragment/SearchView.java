@@ -14,4 +14,6 @@ public interface SearchView {
     void setSearchRecipes(List<Recipe> recipes);
 
     void showRecipeDetails(RecipeFull recipe);
+
+    void notifyItemChanged(int position);
 }

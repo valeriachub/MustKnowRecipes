@@ -136,6 +136,11 @@ public class SearchFragment extends Fragment implements SearchView, RecipeCallba
         RecipeDetailsActivity.start(getActivity(), recipe);
     }
 
+    @Override
+    public void notifyItemChanged(int position) {
+//        adapter.notifyItemChanged(position);
+    }
+
     /**
      * Override Callback
      */
@@ -147,6 +152,6 @@ public class SearchFragment extends Fragment implements SearchView, RecipeCallba
 
     @Override
     public void onRecipeLikeClicked(Recipe recipe, int position) {
-        searchPresenter.onLikeRecipeClicked(recipe);
+        searchPresenter.onLikeRecipeClicked(recipe, position);
     }
 }

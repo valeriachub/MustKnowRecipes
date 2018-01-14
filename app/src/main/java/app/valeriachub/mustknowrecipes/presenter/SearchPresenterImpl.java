@@ -51,14 +51,15 @@ public class SearchPresenterImpl implements SearchPresenter {
     }
 
     @Override
-    public void onLikeRecipeClicked(Recipe recipe) {
+    public void onLikeRecipeClicked(Recipe recipe, int position) {
         DataManager dataManager = DataManager.getInstance(context);
         if (recipe.getIdFavourite() > 0) {
             dataManager.removeFromFavourites(recipe.getId());
             recipe.setIdFavourite(0);
         } else {
-            dataManager.addToFavourites(recipe.getId());
+            recipe.setIdFavourite(dataManager.addToFavourites(recipe.getId()));
         }
+        searchView.notifyItemChanged(position);
     }
 
     @Override
