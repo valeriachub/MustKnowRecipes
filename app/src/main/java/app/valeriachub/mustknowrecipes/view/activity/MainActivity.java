@@ -9,6 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 import app.valeriachub.mustknowrecipes.R;
 import app.valeriachub.mustknowrecipes.presenter.MainPresenter;
 import app.valeriachub.mustknowrecipes.presenter.MainPresenterImpl;
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_main);
+        Fabric.with(this, new Crashlytics());
         unbinder = ButterKnife.bind(this);
         initUI();
     }

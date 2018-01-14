@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -24,5 +25,11 @@
         <activity
             android:name=".view.activity.RecipeDetailsActivity"
             android:screenOrientation="portrait" />
+
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3de490a65d351330512c77df8fedd7f879f1e43e"
+            />
     </application>
 </manifest>
