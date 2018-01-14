@@ -25,5 +25,8 @@
     <string name="about">О приложении</string>
     <string name="search_hint">Название ..</string>
 
-    <string name="no_recipes">К сожалению, тут пока нет рецептов ...</string>
+    <string name="version">Версия:</string>
+
+
+    <string name="no_recipes">К сожалению, тут пока нет рецептов …</string>
 </resources>
