@@ -29,9 +29,6 @@ public class AboutPresenterImpl implements AboutPresenter {
 
     @Override
     public void getAboutInfo() {
-        String info = "Самые известные рецепты со вего мира. Те рецепты, которые представляют каждую страну " +
-                "по своему. Те рецепты, которые открывают любые двери в мир кулинарии. Те рецепты, которые " +
-                "должен знать каждый уважаемый себя шеф.";
         String version = "";
         try {
             version = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
@@ -39,7 +36,7 @@ public class AboutPresenterImpl implements AboutPresenter {
             e.printStackTrace();
         }
 
-        About about = new About(info, context.getString(R.string.version) + " " + version);
+        About about = new About(context.getString(R.string.description), context.getString(R.string.version) + " " + version);
         aboutView.showAboutInformation(about);
     }
 }

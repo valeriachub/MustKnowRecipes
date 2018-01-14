@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
@@ -7,22 +8,43 @@
 
     <include layout="@layout/layout_toolbar" />
 
-    <TextView
-        android:id="@+id/text_info"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:layout_weight="1"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:textColor="@color/primary_text"
-        android:textSize="@dimen/text_small" />
+        android:background="@drawable/bg_round_white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/primary_dark"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_padding"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text_small"
+            tools:text="@string/description" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/text_version"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="right|bottom"
-        android:padding="@dimen/activity_horizontal_margin"
+        android:gravity="end|bottom"
+        android:padding="@dimen/activity_vertical_margin"
         android:textColor="@color/secondary_text"
-        android:textSize="@dimen/text_small" />
+        android:textSize="@dimen/text_small"
+        tools:text="@string/version" />
 </LinearLayout>
